@@ -1,0 +1,107 @@
+function convertToRoman(num) {
+ let romanArray = [];
+ let remainder = 0;
+
+ if (num % 1000 == 0){
+   let divi = num/1000;
+   for (let i = 0; i < divi; i++){
+     romanArray.push('M')
+    }
+   }
+
+  else if (remainder = num % 1000 && remainder >= 900){
+   let divi = Math.floor(remainder/900);
+   for (let i = 0; i < divi-1; i++){
+     romanArray.push('CM')
+    }
+   }
+
+
+  else if (remainder = remainder % 900 && remainder >= 500){
+   let divi = Math.floor(remainder/500);
+   for (let i = 0; i < divi-1; i++){
+     romanArray.push('D')
+    }
+   }
+
+
+  else if (remainder = remainder % 500 && remainder >= 400){
+   let divi = Math.floor(remainder/400);
+   for (let i = 0; i < divi-1; i++){
+     romanArray.push('CD')
+    }
+   }
+
+  else if (remainder = remainder % 400 && remainder >= 100){
+   let divi = Math.floor(remainder/100);
+   for (let i = 0; i < divi-1; i++){
+     romanArray.push('C')
+    }
+   }
+
+  else if (remainder = remainder % 100 && remainder >= 90){
+   let divi = Math.floor(remainder/90);
+   for (let i = 0; i < divi; i++){
+     romanArray.push('XC')
+    }
+   }
+
+  else if (remainder = remainder % 90 && remainder >= 50){
+   let divi = Math.floor(remainder/50);
+   for (let i = 0; i < divi; i++){
+     romanArray.push('L')
+    }
+   }
+
+  else if (remainder = remainder % 50 && remainder >= 40){
+   let divi = Math.floor(remainder/40);
+   for (let i = 0; i < divi; i++){
+     romanArray.push('XL')
+    }
+   }
+
+
+  else if (remainder = remainder % 40 && remainder >= 10){
+   let divi = Math.floor(remainder/10);
+   for (let i = 0; i < divi; i++){
+     romanArray.push('X')
+    }
+   }
+
+
+  else if (remainder = remainder % 10 && remainder >= 9){
+   let divi = Math.floor(remainder/9);
+   for (let i = 0; i < divi; i++){
+     romanArray.push('IX')
+    }
+   }
+
+  else if (remainder = remainder % 9 && remainder >= 5){
+   let divi = Math.floor(remainder/5);
+   for (let i = 0; i < divi; i++){
+     romanArray.push('V')
+    }
+   }
+
+  
+  else if (remainder = remainder % 5 && remainder >= 4){
+   let divi = Math.floor(remainder/4);
+   for (let i = 0; i < divi; i++){
+     romanArray.push('IV')
+    }
+   }
+
+
+  else if (remainder = remainder % 4 && remainder >= 1){
+   let divi = remainder/1;
+   for (let i = 0; i < divi; i++){
+     romanArray.push('I')
+    }
+   }  
+
+ romanArray = romanArray.join('')
+ console.log(romanArray,remainder)
+ return romanArray;
+}
+
+convertToRoman(1100);

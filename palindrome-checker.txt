@@ -1,0 +1,25 @@
+function palindrome(str) {
+  let newStr = str.toLowerCase();
+  let newerStr = newStr.replace(/\s+/g, '');
+  let newestStr = newerStr.replace(/[^a-z0-9]/g, '')
+  console.log("newestStr's length is ", newestStr.length)
+  let transStr = [];
+  for (let i = 0; i < newestStr.length; i++){
+    transStr.push(newestStr[i])
+  }
+  let tranStr = transStr.reverse()
+  let compareStr = tranStr.join('')
+  //let compareStr = transStr.toString()
+  console.log("compareStr is ", compareStr)
+  console.log("newestStr is ", newestStr)
+
+
+  if (newestStr === compareStr){
+    return true;
+  } else{
+    return false;
+  }
+
+}
+
+palindrome("1 eye for of 1 eye");
